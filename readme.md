@@ -14,5 +14,6 @@ the story is written by [SHEJI](https://space.bilibili.com/238046017)
 -animation system  
 -NPC  
 -inventory & item system  
+-time syestem  
 -Replace the **DAMN** image  
 -and more,IM thinking......  
