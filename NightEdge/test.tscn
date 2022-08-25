@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://brick.png" type="Texture" id=1]
+[ext_resource path="res://player/player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://chinabrick.png" type="Texture" id=3]
+[ext_resource path="res://wall.png" type="Texture" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 10, 240 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Chinabrick" type="Sprite" parent="."]
+position = Vector2( 0, 240 )
+texture = ExtResource( 3 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 320, 240 )
+
+[node name="Brick" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 320, 240 )
+
+[node name="player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 160, 120 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Wall" type="Sprite" parent="StaticBody2D"]
+position = Vector2( -20, 0 )
+texture = ExtResource( 4 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 20, 480 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( -10, 240 )
+shape = SubResource( 1 )
